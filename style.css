@@ -702,13 +702,3 @@ footer {
 .tlx.is-sel .bar { transform: scaleY(1.8); }
 .ap-foot a { border-bottom: 1px solid var(--line); transition: border-color 0.45s cubic-bezier(0.22, 0.61, 0.36, 1); }
 .ap-foot a:hover { border-color: var(--text); }
-
-/* ===== CLICKABLE PROJECT CARDS ===== */
-.featured-card.is-clickable {
-  cursor: pointer;
-}
-
-.featured-card.is-clickable:focus-visible {
-  outline: 2px solid var(--text);
-  outline-offset: 3px;
-}
