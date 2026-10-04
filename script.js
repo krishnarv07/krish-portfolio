@@ -253,30 +253,141 @@ document.querySelectorAll(".mobile-menu a").forEach((link) => {
   document.querySelectorAll("main section[id]").forEach((s) => spy.observe(s));
 })();
 
-/* ===== WHOLE PROJECT CARD CLICK ===== */
+/* ===== MOBILE EXPERIENCE ACCORDION ===== */
 (() => {
-  const cards = document.querySelectorAll(".featured-card");
+  const items = [...document.querySelectorAll(".experience-item")];
+  if (!items.length) return;
 
-  cards.forEach((card) => {
-    const link = card.querySelector(".project-link");
-    if (!link) return;
+  const mq = matchMedia("(max-width: 900px)");
 
-    card.classList.add("is-clickable");
-    card.setAttribute("tabindex", "0");
-    card.setAttribute("role", "link");
+  const sync = () => {
+    if (mq.matches) {
+      // Mobile: only one experience item may be open at a time.
+      // This also fixes the desktop -> mobile resize case where all items
+      // may already have the `open` class.
+      let active = items.find((item) => item.classList.contains("open")) || items[0];
+      items.forEach((item) => {
+        const isActive = item === active;
+        item.classList.toggle("open", isActive);
+        const button = item.querySelector(".experience-summary");
+        if (button) button.setAttribute("aria-expanded", isActive);
+      });
+    } else {
+      // Desktop: preserve the original fully expanded experience layout.
+      items.forEach((item) => item.classList.add("open"));
+      items.forEach((item) => {
+        const button = item.querySelector(".experience-summary");
+        if (button) button.setAttribute("aria-expanded", "true");
+      });
+    }
+  };
 
-    const openProject = () => link.click();
+  items.forEach((item) => {
+    const button = item.querySelector(".experience-summary");
+    if (!button) return;
 
-    card.addEventListener("click", (event) => {
-      // Let the existing arrow/link handle its own click.
-      if (event.target.closest("a")) return;
-      openProject();
+    button.addEventListener("click", () => {
+      if (!mq.matches) return;
+
+      const willOpen = !item.classList.contains("open");
+      items.forEach((other) => {
+        other.classList.remove("open");
+        const otherButton = other.querySelector(".experience-summary");
+        if (otherButton) otherButton.setAttribute("aria-expanded", "false");
+      });
+
+      if (willOpen) {
+        item.classList.add("open");
+        button.setAttribute("aria-expanded", "true");
+      }
     });
+  });
 
-    card.addEventListener("keydown", (event) => {
-      if (event.key !== "Enter" && event.key !== " ") return;
-      event.preventDefault();
-      openProject();
-    });
+  mq.addEventListener?.("change", sync);
+  sync();
+})();
+
+/* ===== MOBILE: swipe dots (Work, About) ===== */
+(() => {
+  document.querySelectorAll(".featured-grid, .about-facts").forEach((sc) => {
+    const kids = [...sc.children];
+    if (kids.length < 2) return;
+    const dots = document.createElement("div");
+    dots.className = "swipe-dots";
+    dots.setAttribute("aria-hidden", "true");
+    kids.forEach(() => dots.appendChild(document.createElement("i")));
+    sc.after(dots);
+    const dotEls = [...dots.children];
+    const update = () => {
+      const pad = parseFloat(getComputedStyle(sc).paddingLeft) || 0;
+      let best = 0, bd = Infinity;
+      kids.forEach((k, i) => {
+        const d = Math.abs(k.offsetLeft - pad - sc.scrollLeft);
+        if (d < bd) { bd = d; best = i; }
+      });
+      dotEls.forEach((el, i) => el.classList.toggle("on", i === best));
+    };
+    sc.addEventListener("scroll", update, { passive: true });
+    addEventListener("resize", update);
+    update();
+  });
+})();
+
+/* ===== MOBILE APPROACH: pill switcher + foldable methods ===== */
+(() => {
+  const LABELS = [
+    ["Journey", "3 questions"],
+    ["Heuristics", "Walkthrough"],
+    ["Hick's law", "Outputs"],
+    ["UMUX", "Time & workload"],
+  ];
+  /* cards that must share one frame (indexes within the panel) */
+  const GROUPS = { 3: [[0], [1, 2]] };
+
+  document.querySelectorAll(".ap-panel").forEach((panel, p) => {
+    const vis = panel.querySelector(".ap-visual");
+    const cards = vis ? [...vis.querySelectorAll(":scope > .ap-card")] : [];
+    const groups = GROUPS[p] || cards.map((_, i) => [i]);
+
+    if (groups.length > 1) {
+      groups.forEach((g) => {
+        if (g.length < 2) return;
+        cards[g[0]].classList.add("grp-a");
+        cards[g[g.length - 1]].classList.add("grp-b");
+      });
+      const seg = document.createElement("div");
+      seg.className = "ap-seg";
+      const btns = groups.map((g, i) => {
+        const b = document.createElement("button");
+        b.type = "button";
+        b.textContent = (LABELS[p] || [])[i] || `View ${i + 1}`;
+        b.addEventListener("click", () => show(i));
+        seg.appendChild(b);
+        return b;
+      });
+      const show = (i) => {
+        cards.forEach((c, j) => c.classList.toggle("is-on", groups[i].includes(j)));
+        btns.forEach((b, j) => { b.classList.toggle("on", j === i); b.setAttribute("aria-pressed", j === i); });
+      };
+      vis.before(seg);
+      vis.classList.add("seg-ready");
+      show(0);
+    }
+
+    const list = panel.querySelector(".ap-list");
+    if (list) {
+      const n = list.children.length;
+      const btn = document.createElement("button");
+      btn.type = "button";
+      btn.className = "ap-more";
+      btn.setAttribute("aria-expanded", "false");
+      btn.innerHTML = `<b>How I do it · ${n} methods</b><span aria-hidden="true">+</span>`;
+      btn.addEventListener("click", () => {
+        const open = list.classList.toggle("open");
+        btn.setAttribute("aria-expanded", open);
+      });
+      list.before(btn);
+      list.classList.add("fold");
+    }
   });
 })();
