@@ -1,397 +1,442 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Krishna RV – UX Designer & Product Thinker</title>
-    <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="mediaqueries.css" />
-  </head>
-  <body>
-    <nav id="desktop-nav">
-      <div class="logo">Krishna RV</div>
-      <div>
-        <ul class="nav-links">
-          <li><a href="#about">About</a></li>
-          <li><a href="#experience">Experience</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Krishna RV — UX/UI Designer creating clear, thoughtful digital experiences." />
+  <title>Krishna RV — UX/UI Designer</title>
+  <script>document.documentElement.classList.add("js")</script>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="mediaqueries.css" />
+</head>
+
+<body>
+  <header class="site-header">
+    <nav class="nav">
+      <a class="logo" href="#home">Krishna RV</a>
+
+      <div class="nav-links">
+        <a href="#work">Work</a>
+        <a href="#experience">Experience</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+        <a class="nav-resume" href="https://drive.google.com/file/d/1GZ74InikGeGIBj3jqQythHzRwDpP4urT/view?usp=sharing" target="_blank" rel="noopener">Resume ↗</a>
       </div>
+
+      <button class="menu-toggle" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span>
+      </button>
     </nav>
 
-    <nav id="hamburger-nav">
-      <div class="logo">Krishna RV</div>
-      <div class="hamburger-menu">
-        <div class="hamburger-icon" onclick="toggleMenu()">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-        <div class="menu-links">
-          <li><a href="#about" onclick="toggleMenu()">About</a></li>
-          <li><a href="#experience" onclick="toggleMenu()">Experience</a></li>
-          <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
-          <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
-        </div>
-      </div>
-    </nav>
+    <div class="mobile-menu">
+      <a href="#work">Work</a>
+      <a href="#experience">Experience</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+      <a href="https://drive.google.com/file/d/1GZ74InikGeGIBj3jqQythHzRwDpP4urT/view?usp=sharing" target="_blank" rel="noopener">Resume ↗</a>
+    </div>
+  </header>
 
-    <section id="profile">
-      <div class="section__pic-container">
-        <img src="assetes/profile (1).png" alt="Krishna profile picture" />
-      </div>
-      <div class="section__text">
-        <p class="section__text__p1">Hello, I'm</p>
-        <h1 class="title">Krishna</h1>
-        <p class="section__text__p2">UX Designer & Product Thinker</p>
-        <div class="btn-container">
-          <button
-            class="btn btn-color-2"
-            onclick="window.open('assetes/Main-CV.pdf')"
-          >
-            Download UX Resume
-          </button>
-          <button class="btn btn-color-1" onclick="location.href='./#contact'">
-            Contact Info
-          </button>
+  <main id="home">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">HEY, I'M KRISHNA 👋</p>
+        <h1>I make complicated things<br />feel a little more<br /><span>simple!</span></h1>
+        <p class="hero-description">
+          I love turning messy ideas and complex user journeys into clear, practical experiences for web and mobile.
+        </p>
+
+        <div class="hero-actions">
+          <a class="button button-dark" href="#work">View my work</a>
+          <a class="button button-light" href="https://drive.google.com/file/d/1GZ74InikGeGIBj3jqQythHzRwDpP4urT/view?usp=sharing" target="_blank" rel="noopener">Download resume</a>
         </div>
-        <div id="socials-container">
-          <img
-            src="assetes/linkedin.png"
-            alt="My LinkedIn profile"
-            class="icon"
-            onclick="location.href='https://www.linkedin.com/in/krishnarv07/'"
-          />
-          <img
-            src="assetes/github.png"
-            alt="My Github profile"
-            class="icon"
-            onclick="location.href='https://github.com/krishnarv07'"
-          />
+
+        <p class="current-role">Currently working on e-commerce experiences at <strong>Bhima Jewellery.</strong></p>
+      </div>
+
+      <div class="hero-image-wrap">
+        <img src="assetes/hero.jpg" alt="Krishna RV" class="hero-image" />
+      </div>
+    </section>
+
+    <!-- SELECTED WORK -->
+    <section id="work" class="section work-section">
+      <div class="section-heading">
+        <p class="eyebrow">Selected work</p>
+        <h2>Designing for real problems.</h2>
+        <p>
+          A selection of product and UX work across e-commerce, mobile experiences, and complex user journeys.
+        </p>
+      </div>
+
+      <div class="featured-grid">
+        <article class="featured-card">
+          <div class="project-number">01</div>
+          <div class="project-content">
+            <div class="project-main">
+              <p class="project-type">E-commerce · UX/UI</p>
+              <h3>Bhima Jewellery</h3>
+              <div class="project-description">
+                <p>Designing and improving Bhima Jewellery’s e-commerce experience across discovery, product, cart, checkout, and customer journeys.</p>
+                <p>Worked across UX research, flows, responsive UI, retail &amp; E-Gold scheme integration, Pimcore catalogue structure, design systems, and transactional communication.</p>
+              </div>
+              <div class="tags">
+                <span>UX Research</span><span>E-commerce</span><span>Responsive Design</span><span>Design Systems</span>
+              </div>
+            </div>
+          </div>
+          <a class="project-arrow project-link" href="https://mybhima.com/" target="_blank" rel="noopener">↗</a>
+        </article>
+
+        <article class="featured-card">
+          <div class="project-number">02</div>
+          <div class="project-content">
+            <div class="project-main">
+              <p class="project-type">Product · Case Study</p>
+              <h3>E-Gold Journey</h3>
+              <div class="project-description">
+                <p>Simplifying scheme management, maturity, redemption, eligibility, and edge cases into a clearer digital journey.</p>
+              </div>
+              <div class="tags">
+                <span>Notion Case Study</span><span>User Journey Mapping</span><span>Information Architecture</span><span>Edge Case Mapping</span>
+              </div>
+            </div>
+          </div>
+          <span class="project-arrow">↗</span>
+        </article>
+
+        <article class="featured-card">
+          <div class="project-number">03</div>
+          <div class="project-content">
+            <div class="project-main">
+              <p class="project-type">Product · Case Study &amp; Redesign</p>
+              <h3>Zepto UX Case Study</h3>
+              <div class="project-description">
+                <p>Evaluating the existing experience, interpreting usability issues, redesigning key flows, and validating the changes through usability testing.</p>
+                <p>Used the <strong>NASA-TLX</strong> method to understand perceived workload across mental, physical, and temporal demand, effort, performance, and frustration.</p>
+              </div>
+              <div class="tags">
+                <span>Usability Testing</span><span>NASA-TLX</span><span>Cognitive Load</span><span>Hick’s Law</span>
+              </div>
+            </div>
+          </div>
+          <a class="project-arrow project-link" href="https://www.behance.net/gallery/241273799/Zepto-Redesign-UX-Case-Study" target="_blank" rel="noopener">↗</a>
+        </article>
+
+        <article class="featured-card">
+          <div class="project-number">04</div>
+          <div class="project-content">
+            <div class="project-main">
+              <p class="project-type">Product · Website UX</p>
+              <h3>DahNAY Logistics</h3>
+              <div class="project-description">
+                <p>Structuring a complex logistics website through domain research, clearer service and solution architecture, and a practical CBM calculator for shipment planning.</p>
+              </div>
+              <div class="tags">
+                <span>Information Architecture</span><span>Content Strategy</span><span>CBM Calculator</span><span>Logistics UX</span><span>Utility Design</span>
+              </div>
+            </div>
+          </div>
+          <a class="project-arrow project-link" href="https://dahnay.com/" target="_blank" rel="noopener">↗</a>
+        </article>
+      </div>
+
+      <div class="more-work">
+        <div>
+          <p class="eyebrow">More work</p>
+          <h3>Earlier explorations & experiments</h3>
+        </div>
+        <div class="mini-projects">
+          <a href="https://www.behance.net/gallery/229957453/Decide-A-Smart-Decision-Making-App-UIX-Project" target="_blank" rel="noopener">Decide — Smart Decisions ↗</a>
+          <a href="https://www.behance.net/gallery/202205421/MEGAMING-Streaming_Platform" target="_blank" rel="noopener">MEGAMING — Streaming Platform ↗</a>
         </div>
       </div>
     </section>
 
-    <section id="about">
-      <p class="section__text__p1">Get To Know More</p>
-      <h1 class="title">About Me</h1>
-      <div class="section-container">
-        <div class="section__pic-container">
-          <img
-            src="assetes/PIC (1).png"
-            alt="Profile picture"
-            class="about-pic"
-          />
+    <!-- EXPERIENCE -->
+    <section id="experience" class="section experience-section">
+      <div class="section-heading">
+        <p class="eyebrow">Experience</p>
+        <h2>Designing real products.</h2>
+      </div>
+
+      <div class="experience-item current">
+        <div class="experience-meta">
+          <span>Jan 2026 — Present</span>
+          <span>UI/UX Designer</span>
         </div>
-        <div class="about-details-container">
-          <div class="about-containers">
-            <div class="details-container">
-              <img
-                src="assetes/experience.png"
-                alt="Experience icon"
-                class="icon"
-              />
-              <h3>Certificates</h3>
-              <p>
-                UI/UX – App Design (Udemy)<br />
-                UI/UX for Beginners (Great Learning)
-              </p>
-            </div>
-            <div class="details-container">
-              <img
-                src="assetes/education.png"
-                alt="Education icon"
-                class="icon"
-              />
-              <h3>Education</h3>
-              <p>B.Tech Information Technology<br />Diploma ECE</p>
-            </div>
-          </div>
-          <div class="text-container">
-            <p>
-              I’m Krishna, a UX designer with a B.Tech background and about a year of experience.<br><br>
-              I’m not athletic, can’t sing, don’t drink, and I can’t dance. But designing is the one thing I’m good at.<br><br>
-              Right now, I just want to be part of something meaningful — building from 0 → 1 or scaling from 1 → 100.<br><br>
-              I’m inspired by what teams like Happenstance are doing and want to contribute my skills where they can make a real difference.
-            </p>
+        <div>
+          <h3>Bhima Jewellery</h3>
+          <p>
+            Designing and improving the Bhima Jewellery e-commerce experience across discovery, product, cart, checkout, and customer journeys.
+          </p>
+          <p>
+            Worked across competitor research, user flows, responsive UI, retail &amp; E-Gold scheme integration, Pimcore catalogue structure, design systems, and transactional communication.
+          </p>
+          <div class="tags">
+            <span>E-commerce</span><span>UX/UI</span><span>User Flows</span><span>Responsive Design</span><span>Design Systems</span>
           </div>
         </div>
       </div>
-      <img
-        src="assetes/arrow.png"
-        alt="Arrow icon"
-        class="icon arrow"
-        onclick="location.href='./#experience'"
-      />
-    </section>
 
-    <section id="experience">
-      <p class="section__text__p1">Explore My</p>
-      <h1 class="title">Experience</h1>
-      <div class="experience-details-container">
-        <div class="about-containers">
-          <div class="details-container">
-            <h2 class="experience-sub-title">Full Stack Development</h2>
-            <div class="article-container">
-              <article>
-                <img
-                  src="assetes/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>HTML</h3>
-                  <p>Experienced</p>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="assetes/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>CSS</h3>
-                  <p>Experienced</p>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="assetes/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>React</h3>
-                  <p>Intermediate</p>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="assetes/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>JavaScript</h3>
-                  <p>Basic</p>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="assetes/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>AWS</h3>
-                  <p>Intermediate</p>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="assetes/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>Git</h3>
-                  <p>Intermediate</p>
-                </div>
-              </article>
-            </div>
-          </div>
-
-          <div class="details-container">
-            <h2 class="experience-sub-title">UI/UX Designer</h2>
-            <div class="article-container">
-              <article>
-                <img
-                  src="assetes/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>Figma</h3>
-                  <p>Experienced</p>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="assetes/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>Prototyping & Wireframing</h3>
-                  <p>Intermediate</p>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="assetes/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>Collaboration & Communication</h3>
-                  <p>Intermediate</p>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="assetes/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>Responsive Design</h3>
-                  <p>Intermediate</p>
-                </div>
-              </article>
-            </div>
+      <div class="experience-item">
+        <div class="experience-meta">
+          <span>Aug 2025 — Dec 2025</span>
+          <span>UI/UX Designer · Intern</span>
+        </div>
+        <div>
+          <h3>Madarth®</h3>
+          <p>
+            Worked across digital products and client projects, from website structure and UX to visual design and implementation-ready interfaces.
+          </p>
+          <p>
+            Worked on <strong>DahNAY Logistics</strong>, structuring complex logistics content, separating services and solutions, and designing a practical <strong>CBM calculator</strong> for shipment planning.
+          </p>
+          <div class="tags">
+            <span>UX/UI</span><span>Website UX</span><span>Information Architecture</span><span>Content Strategy</span><span>Utility Design</span>
           </div>
         </div>
       </div>
-      <img
-        src="assetes/arrow.png"
-        alt="Arrow icon"
-        class="icon arrow"
-        onclick="location.href='./#projects'"
-      />
-    </section>
 
-    <section id="projects">
-      <p class="section__text__p1">Browse My Recent</p>
-      <h1 class="title">Projects</h1>
-      <div class="experience-details-container">
-        <div class="about-containers">
-
-          <!-- ONIO -->
-          <div class="details-container color-container">
-            <div class="article-container">
-              <img
-                src="assetes/onio-thumb.png"
-                alt="ONIO project screenshot"
-                class="project-img"
-              />
-            </div>
-            <h2 class="experience-sub-title project-title">ONIO – Audio Layers</h2>
-            <div class="btn-container">
-              <button
-                class="btn btn-color-2 project-btn"
-                onclick="location.href='https://www.behance.net/gallery/229429167/ONIO-Audio-Feel-the-Layers-of-Sound'"
-              >
-                Behance
-              </button>
-              <button
-                class="btn btn-color-2 project-btn"
-                onclick="location.href='https://www.behance.net/gallery/229429167/ONIO-Audio-Feel-the-Layers-of-Sound'"
-              >
-                Live Demo
-              </button>
-            </div>
-          </div>
-
-          <!-- Decide -->
-          <div class="details-container color-container">
-            <div class="article-container">
-              <img
-                src="assetes/decide-thumb.png"
-                alt="Decide project screenshot"
-                class="project-img"
-              />
-            </div>
-            <h2 class="experience-sub-title project-title">Decide – Smart Decisions</h2>
-            <div class="btn-container">
-              <button
-                class="btn btn-color-2 project-btn"
-                onclick="location.href='https://www.behance.net/gallery/229957453/Decide-A-Smart-Decision-Making-App-UIX-Project'"
-              >
-                Behance
-              </button>
-              <button
-                class="btn btn-color-2 project-btn"
-                onclick="location.href='https://www.behance.net/gallery/229957453/Decide-A-Smart-Decision-Making-App-UIX-Project'"
-              >
-                Live Demo
-              </button>
-            </div>
-          </div>
-
-          <!-- MEGAMING -->
-          <div class="details-container color-container">
-            <div class="article-container">
-              <img
-                src="assetes/project.png"
-                alt="MEGAMING project screenshot"
-                class="project-img"
-              />
-            </div>
-            <h2 class="experience-sub-title project-title">MEGAMING – Streaming Platform</h2>
-            <div class="btn-container">
-              <button
-                class="btn btn-color-2 project-btn"
-                onclick="location.href='https://www.behance.net/krishnarv07'"
-              >
-                Behance
-              </button>
-              <button
-                class="btn btn-color-2 project-btn"
-                onclick="location.href='https://www.behance.net/gallery/202205421/MEGAMING-Streaming_Platform'"
-              >
-                Live Demo
-              </button>
-            </div>
-          </div>
-
+      <div class="experience-item">
+        <div class="experience-meta">
+          <span>Feb 2025 — Jul 2025</span>
+          <span>UI/UX Intern</span>
         </div>
-      </div>
-      <img
-        src="assetes/arrow.png"
-        alt="Arrow icon"
-        class="icon arrow"
-        onclick="location.href='./#contact'"
-      />
-    </section>
-
-    <section id="contact">
-      <p class="section__text__p1">Get in Touch</p>
-      <h1 class="title">Contact Me</h1>
-      <div class="contact-info-upper-container">
-        <div class="contact-info-container">
-          <img
-            src="assetes/email.png"
-            alt="Email icon"
-            class="icon contact-icon email-icon"
-          />
-          <p><a href="mailto:r.v.krishna2k4@gmail.com">r.v.krishna2k4@gmail.com</a></p>
-        </div>
-        <div class="contact-info-container">
-          <img
-            src="assetes/linkedin.png"
-            alt="LinkedIn icon"
-            class="icon contact-icon"
-          />
-          <p><a href="https://www.linkedin.com/in/krishnarv07/">LinkedIn</a></p>
+        <div>
+          <h3>Renu Sharma Healthcare &amp; Education Foundation</h3>
+          <p>
+            Designed and improved digital experiences for a Mumbai-based organisation, working across its foundation websites and e-commerce projects.
+          </p>
+          <p>
+            Focused on understanding requirements, structuring pages, creating user-friendly interfaces, and developing consistent website experiences across different use cases.
+          </p>
+          <div class="tags">
+            <span>UX/UI</span><span>Web Design</span><span>E-commerce</span><span>Responsive Design</span>
+          </div>
         </div>
       </div>
     </section>
 
-    <footer>
-      <nav>
-        <div class="nav-links-container">
-          <ul class="nav-links">
-            <li><a href="#about">About</a></li>
-            <li><a href="#experience">Experience</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
+    <!-- APPROACH -->
+    <section class="section approach-section" id="approach">
+      <div class="section-heading approach-heading">
+        <p class="eyebrow">Approach</p>
+        <h2>I don't start with screens.<br />I start with questions.</h2>
+        <p class="approach-intro">I don’t use one fixed research method. I choose the right mix for the problem — from domain and competitor research to usability evaluation, testing, and measurable feedback.</p>
+      </div>
+
+      <div class="approach" data-approach>
+        <div class="approach-tabs" role="tablist" aria-label="Design process stages">
+          <button class="approach-tab active" role="tab" id="tab-1" aria-controls="ap-1" aria-selected="true"><span>01</span>Explore</button>
+          <button class="approach-tab" role="tab" id="tab-2" aria-controls="ap-2" aria-selected="false" tabindex="-1"><span>02</span>Evaluate</button>
+          <button class="approach-tab" role="tab" id="tab-3" aria-controls="ap-3" aria-selected="false" tabindex="-1"><span>03</span>Structure</button>
+          <button class="approach-tab" role="tab" id="tab-4" aria-controls="ap-4" aria-selected="false" tabindex="-1"><span>04</span>Validate</button>
         </div>
-      </nav>
-    </footer>
-    <script src="script.js"></script>
-  </body>
+        <div class="approach-bar"><i></i></div>
+
+        <!-- 01 EXPLORE -->
+        <div class="ap-panel active" role="tabpanel" id="ap-1" aria-labelledby="tab-1">
+          <div class="ap-head">
+            <div>
+              <p class="ap-q">What is this product, and who is it for?</p>
+              <h3>Understand the context.</h3>
+              <p>Before I draw anything, I learn how the product, people, business goal, and domain fit together — and how the experience works today.</p>
+            </div>
+            <div>
+              <ul class="ap-list">
+                <li><b>Domain research</b> — learn the vocabulary, rules, and constraints of the space.</li>
+                <li><b>Competitor review</b> — see what users already expect and where others fall short.</li>
+                <li><b>User journeys</b> — map each step people take and mark where they stall.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="ap-visual">
+            <div class="ap-card wide">
+              <p class="ap-cap">Journey audit: finding where friction hides (example)</p>
+              <ol class="journey">
+                <li style="--i:0"><i></i><span>Discover</span></li>
+                <li style="--i:1" class="warn"><i></i><span>Product</span><em>Hard to compare</em></li>
+                <li style="--i:2"><i></i><span>Cart</span></li>
+                <li style="--i:3" class="warn"><i></i><span>Checkout</span><em>Too many fields</em></li>
+                <li style="--i:4"><i></i><span>After sale</span></li>
+              </ol>
+            </div>
+            <div class="ap-card wide">
+              <p class="ap-cap">Three questions I answer first</p>
+              <div class="qs">
+                <p class="stag" style="--i:0"><b>Who is this for?</b>Their goals, habits, and level of experience.</p>
+                <p class="stag" style="--i:1"><b>What are they trying to finish?</b>The real task behind the click.</p>
+                <p class="stag" style="--i:2"><b>What does the business need?</b>The goal the design has to support.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 02 EVALUATE -->
+        <div class="ap-panel" role="tabpanel" id="ap-2" aria-labelledby="tab-2">
+          <div class="ap-head">
+            <div>
+              <p class="ap-q">Where does it break, and why?</p>
+              <h3>Find where it breaks.</h3>
+              <p>I evaluate the existing experience to uncover friction, unclear decisions, usability gaps, and edge cases — things a visual review can't show.</p>
+            </div>
+            <div>
+              <ul class="ap-list">
+                <li><b>Heuristic review</b> — score the interface against Nielsen's 10 usability heuristics.</li>
+                <li><b>Cognitive walkthrough</b> — evaluate a task from a first-time user's perspective.</li>
+                <li><b>Task analysis</b> — break goals into steps to spot extra effort.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="ap-visual">
+            <div class="ap-card">
+              <p class="ap-cap">Heuristic checklist</p>
+              <svg id="radar" viewBox="0 0 400 320" role="img" aria-label="Radar chart of ten usability heuristic scores"></svg>
+              <p class="ap-note">A fuller shape means healthier. Dents show where to dig deeper.</p>
+            </div>
+            <div class="ap-card">
+              <p class="ap-cap">Cognitive walkthrough: order milk and a personal-care item with gift wrap</p>
+              <ul class="cw">
+                <li class="stag ok" style="--i:0"><b>✓</b><span>Will the user try the right action?<small>Shoppers expect to search for groceries.</small></span></li>
+                <li class="stag fail" style="--i:1"><b>✕</b><span>Will they notice the action is available?<small>Gift wrap is hidden during product selection.</small></span></li>
+                <li class="stag ok" style="--i:2"><b>✓</b><span>Will they link the action to the result?<small>"Add" is a pattern people already know.</small></span></li>
+                <li class="stag ok" style="--i:3"><b>✓</b><span>Will they see progress?<small>The cart icon updates when an item is added.</small></span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- 03 STRUCTURE -->
+        <div class="ap-panel" role="tabpanel" id="ap-3" aria-labelledby="tab-3">
+          <div class="ap-head">
+            <div>
+              <p class="ap-q">How should it be organised?</p>
+              <h3>Turn evidence into direction.</h3>
+              <p>I turn research into patterns, priorities, and design direction — shaping clearer information, flows, and interactions before any visual polish.</p>
+            </div>
+            <div>
+              <ul class="ap-list">
+                <li><b>Patterns and priorities</b> — group findings and decide what matters most.</li>
+                <li><b>Information architecture</b> — organise content the way people think.</li>
+                <li><b>Flows and wireframes</b> — sketch the path, then the screens.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="ap-visual">
+            <div class="ap-card">
+              <p class="ap-cap">Hick's Law: RT = a + b·log₂(n + 1)</p>
+              <svg id="hick" viewBox="0 0 340 150" role="img" aria-label="Decision time grows with the number of choices"></svg>
+              <label class="hick-ctl"><span>Choices on screen</span><input type="range" id="hick-n" min="2" max="20" value="12" /><output id="hick-out"></output></label>
+              <p class="ap-note">More choices at once means slower decisions, so I group, prioritise, and reveal options step by step. Constants are illustrative.</p>
+            </div>
+            <div class="ap-card">
+              <p class="ap-cap">What this stage produces</p>
+              <div class="outs">
+                <div class="stag" style="--i:0"><b>Information architecture</b><span>Navigation and content grouped by how users think.</span></div>
+                <div class="stag" style="--i:1"><b>User flows</b><span>Every path and edge case, from entry to goal.</span></div>
+                <div class="stag" style="--i:2"><b>Wireframes</b><span>Low-fidelity layouts to test structure before style.</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 04 VALIDATE -->
+        <div class="ap-panel" role="tabpanel" id="ap-4" aria-labelledby="tab-4">
+          <div class="ap-head">
+            <div>
+              <p class="ap-q">Did it actually get easier?</p>
+              <h3>Test, learn, refine.</h3>
+              <p>I validate prototypes with novice and expert users, using measurable signals. Then I iterate until the experience is clearer and ready to build.</p>
+            </div>
+            <div>
+              <ul class="ap-list">
+                <li><b>Usability testing</b> — task times and observation with real users.</li>
+                <li><b>UMUX</b> — a two-question score for perceived usability.</li>
+                <li><b>NASA-TLX</b> — weighted workload across mental, physical, and temporal demand, performance, effort, and frustration.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="ap-visual">
+            <div class="ap-card">
+              <p class="ap-cap">UMUX score (0–100)</p>
+              <div class="donuts">
+                <figure><div class="dn" data-tip="Novice: 47.22, below the 50 benchmark"><svg viewBox="0 0 100 100"><circle class="dn-track" cx="50" cy="50" r="40" /><circle class="dn-fill" cx="50" cy="50" r="40" pathLength="100" style="--v:47.22" /></svg><b data-count="47.22">47.22</b></div><figcaption>Novice</figcaption></figure>
+                <figure><div class="dn" data-tip="Expert: 59.37, above the 50 benchmark"><svg viewBox="0 0 100 100"><circle class="dn-track" cx="50" cy="50" r="40" /><circle class="dn-fill" cx="50" cy="50" r="40" pathLength="100" style="--v:59.37" /></svg><b data-count="59.37">59.37</b></div><figcaption>Expert</figcaption></figure>
+              </div>
+              <div class="overall"><span>Overall UMUX (all participants)</span><b data-count="54.17">54.17</b></div>
+              <div class="meter"><i style="--w:54.17%"></i><u></u></div>
+              <p class="ap-note">Dashed line = 50 benchmark. Novices struggle at first; experts get through on experience, which can hide UX debt.</p>
+            </div>
+            <div class="ap-card">
+              <p class="ap-cap" id="task-cap">Task 1: completion time in seconds</p>
+              <div class="track"><span>Novice</span><div class="dots"></div></div>
+              <div class="track"><span>Expert</span><div class="dots ex"></div></div>
+              <div class="axis"><span style="--p:16.67%">100</span><span style="--p:44.44%">200</span><span style="--p:72.22%">300</span><span style="--p:100%">400</span></div>
+              <p class="ap-note" id="task-note"></p>
+            </div>
+            <div class="ap-card wide">
+              <p class="ap-cap">Weighted NASA-TLX: how heavy each task felt (0–100)</p>
+              <div class="tlx stag" style="--i:0"><span>Task 1</span><div class="bar"><i style="--w:62.3%"></i></div><b data-count="62.3">62.3</b><em>High</em></div>
+              <div class="tlx stag" style="--i:1"><span>Task 2</span><div class="bar"><i style="--w:29.3%"></i></div><b data-count="29.3">29.3</b><em>Low</em></div>
+              <div class="tlx stag" style="--i:2"><span>Task 3</span><div class="bar"><i style="--w:66.3%"></i></div><b data-count="66.3">66.3</b><em>Very high</em></div>
+              <div class="tlx stag" style="--i:3"><span>Task 4</span><div class="bar"><i style="--w:56%"></i></div><b data-count="56.0">56.0</b><em>Moderate–high</em></div>
+              <p class="ap-note">Hover or tap a task to see its completion times above.</p>
+            </div>
+          </div>
+        </div>
+
+        <p class="ap-foot">Examples are drawn from my <a href="https://www.behance.net/gallery/241273799/Zepto-Redesign-UX-Case-Study" target="_blank" rel="noopener">Zepto UX case study ↗</a>.</p>
+      </div>
+    </section>
+
+    
+<!-- ABOUT -->
+    <section id="about" class="section about-section">
+      <div class="about-image">
+        <img src="assetes/about.jpg" alt="Krishna outdoors" />
+      </div>
+
+      <div class="about-copy">
+        <p class="eyebrow">About me</p>
+        <h2>A designer with a developer's perspective.</h2>
+        <p>
+          I’m Krishna, with a background in Information Technology. I like understanding the problem behind the problem, exploring different possibilities, and turning what I learn into better solutions.
+        </p>
+        <p>
+          Having both design and technical knowledge helps me look at things from different sides — from how an idea works to how it gets built.
+        </p>
+
+        <div class="about-facts">
+          <div><span>Education</span><strong>B.Tech — Information Technology</strong></div>
+          <div><span>Courses</span><strong>Google UX Design Certificate<br />University of Cambridge — Cognitive Psychology</strong></div>
+          <div><span>Design tools</span><strong>Figma · Google Stitch · Framer · Anthropic (Claude) · Adobe Color</strong></div>
+          <div><span>Competitor &amp; UI research</span><strong>Mobbin · Perplexity · Notion · Google Trends · <a href="https://designengineer.tools/" target="_blank" rel="noopener">James Warner (Tools) ↗</a></strong></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section contact-section">
+      <p class="eyebrow">Let's connect</p>
+      <h2>Have something worth building?</h2>
+      <p>I'm open to UX/UI opportunities, product collaborations, and conversations about digital experiences.</p>
+
+      <div class="contact-links">
+        <a href="mailto:r.v.krishna2k4@gmail.com">Email ↗</a>
+        <a href="https://www.linkedin.com/in/krishnarv07" target="_blank" rel="noopener">LinkedIn ↗</a>
+        <a href="https://www.behance.net/krishnarv07" target="_blank" rel="noopener">Behance ↗</a>
+        <a href="https://github.com/krishnarv07" target="_blank" rel="noopener">GitHub ↗</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <span>Krishna RV</span>
+    <span>Designed & built by Krishna · 2026</span>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
 </html>
